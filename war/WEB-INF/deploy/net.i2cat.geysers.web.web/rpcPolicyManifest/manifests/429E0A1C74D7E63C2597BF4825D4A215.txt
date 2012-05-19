@@ -1,0 +1,2 @@
+serviceClass: net.i2cat.geysers.web.web.shared.LoginService
+path: F9635AA86DE17064C70B2244F9EA731D.gwt.rpc

@@ -1,0 +1,3 @@
+# Module net.i2cat.geysers.web.web
+# RPC service class, partial path of RPC policy file
+net.i2cat.geysers.web.web.shared.LoginService, F9635AA86DE17064C70B2244F9EA731D.gwt.rpc
