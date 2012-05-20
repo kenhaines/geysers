@@ -342,28 +342,28 @@ margin-top: 0px;
   margin: 0px 0px 0px 3px;
 }
 .gwt-MenuLeft-item {
-	color: MenuText;
-	margin: auto auto auto 2px;
-	padding: 3px 3px 3px 5px;
-	border-top: thin outset;
-	border-right: thin;
-	border-bottom: thin outset;
+	padding-right: 70px;
+	padding-left: 50px;
+	border: Gray;
 	font-variant: small-caps;
 	font-size: 14px;
 	font-style: normal;
 	font-family: Calibri;
-	font-weight: normal;
-	line-height: normal;
-	text-align: center;
-	background-color: Menu;
+	text-align: left;
+	background-color: #cccccc;
 }
 .gwt-MenuLeft-item-submenu {
 }
 .gui-Label-big {
+	color: Navy;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	margin-left: 5px;
 	font-size: large;
 	font-family: Calibri;
 }
 .gui-Label {
+	margin-left: 10px;
 	font-size: medium;
 	font-style: italic;
 	font-family: Calibri;

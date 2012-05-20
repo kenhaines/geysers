@@ -51,7 +51,7 @@ public class ClientView extends Composite {
 		//create Main View (center of Page)
 		HorizontalPanel mainView = new HorizontalPanel();
 		mainPanel.add(mainView);
-		mainView.setWidth("100%");
+		mainView.setSize("100%", "100%");
 		//mainView.setHeight("100%");
 		//mainView.setHeight("250px");
 	

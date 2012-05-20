@@ -7,29 +7,27 @@ import com.google.gwt.event.logical.shared.SelectionHandler;
 import com.google.gwt.user.client.Command;
 import com.google.gwt.user.client.ui.CaptionPanel;
 import com.google.gwt.user.client.ui.Composite;
-import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.MenuBar;
 import com.google.gwt.user.client.ui.MenuItem;
-import com.google.gwt.user.client.ui.MenuItemSeparator;
 import com.google.gwt.user.client.ui.TabPanel;
 import com.google.gwt.user.client.ui.Tree;
 import com.google.gwt.user.client.ui.TreeItem;
 
 public class LeftMenuLayout extends Composite {
 	private MenuItem mntmRequestVi;
-	private String WidthPxl = "100%";
 	private CaptionPanel panel;
 	
 
 	public LeftMenuLayout() {
 		
-		FlowPanel tab1Menu = new FlowPanel();
+		/*FlowPanel tab1Menu = new FlowPanel();
 		initWidget(tab1Menu);
-		tab1Menu.setHeight("100%");
-		tab1Menu.setWidth("100%");
+		tab1Menu.setSize("100%", "100%");*/
 		
 		final TabPanel tabPanel = new TabPanel();
+		initWidget(tabPanel);
+		tabPanel.setSize("100%", "100%");
 		tabPanel.addSelectionHandler(new SelectionHandler<Integer>() {
 			public void onSelection(SelectionEvent<Integer> event) {
 				//here, see which one was selected
@@ -43,21 +41,20 @@ public class LeftMenuLayout extends Composite {
 				
 			}
 		});
-		tab1Menu.add(tabPanel);
-		tabPanel.setWidth("100%");
+	//	tab1Menu.add(tabPanel);
+		
 		
 		//MENU MAIN
 		MenuBar menuBar = new MenuBar(true);
 		tabPanel.add(menuBar, "VIP", false);
-		menuBar.setSize("100%", "");
 		menuBar.setAutoOpen(true);
 		//menu.setWidth("100px");
 		//menu.setHeight("25px");
 		menuBar.setAnimationEnabled(true);
-		MenuBar menuBar_1 = new MenuBar(true);
 		
-		MenuItem mntmVi = new MenuItem("Virtual Infrastucture", false, menuBar_1);
+		MenuItem mntmVi = new MenuItem("Virtual Infrastructure", false, (Command) null);
 		mntmVi.setStyleName("gwt-MenuLeft-item");
+		menuBar.addItem(mntmVi);
 		
 		MenuItem mntmShowVis = new MenuItem("show VI details", false, new Command() {
 			public void execute() {
@@ -65,10 +62,7 @@ public class LeftMenuLayout extends Composite {
 				
 			}
 		});
-		menuBar_1.addItem(mntmShowVis);
-		
-		MenuItemSeparator separator = new MenuItemSeparator();
-		menuBar_1.addSeparator(separator);
+		menuBar.addItem(mntmShowVis);
 		
 		mntmRequestVi = new MenuItem("add request", false, new Command() {
 			public void execute() {
@@ -76,14 +70,11 @@ public class LeftMenuLayout extends Composite {
 			}
 			
 		});
-		menuBar_1.addItem(mntmRequestVi);
+		menuBar.addItem(mntmRequestVi);
 		
-		MenuItemSeparator separator_1 = new MenuItemSeparator();
-		menuBar_1.addSeparator(separator_1);
 		
 		MenuItem mntmRemoveRequest = new MenuItem("remove request", false, (Command) null);
-		menuBar_1.addItem(mntmRemoveRequest);
-		menuBar.addItem(mntmVi);
+		menuBar.addItem(mntmRemoveRequest);
 		
 		MenuItem mntmPips = new MenuItem("List of PIPs", false, new Command() {
 			public void execute() {
@@ -113,14 +104,15 @@ public class LeftMenuLayout extends Composite {
 		
 		Tree tree = new Tree();
 		tabPanel.add(tree, "VI", false);
-		tree.setSize(WidthPxl, "");
+		tree.setHeight(""+menuBar.getOffsetHeight()+"px");
+		//tree.setWidth(""+menuBar.getOffsetWidth()+"px");
 		
 		TreeItem trtmVi = new TreeItem("VI");
 		tree.addItem(trtmVi);
-		trtmVi.setWidth("100%");
 		
 		TreeItem trtmVr = new TreeItem("VR");
 		trtmVi.addItem(trtmVr);
+		trtmVr.setHeight("100%");
 		trtmVr.setState(true);
 		
 		Label label = new Label("VR");
@@ -138,6 +130,7 @@ public class LeftMenuLayout extends Composite {
 		
 		
 		
+		//tabPanel.setSize(""+menuBar.getOffsetWidth()+"px",""+menuBar.getOffsetHeight()+"px");
 		
 		//sctnstcksctnVios.addItem(sectionStack);
 		
