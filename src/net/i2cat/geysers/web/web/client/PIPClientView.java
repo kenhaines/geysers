@@ -74,7 +74,7 @@ public class PIPClientView extends Composite {
 		//create main view
 		CaptionPanel centerPanel = new CaptionPanel();
 		pipLeftMenuLayout.setPanel(centerPanel);
-		centerPanel.setCaptionText("center");
+		//centerPanel.setCaptionText("center");
 		mainView.add(centerPanel);
 		
 		

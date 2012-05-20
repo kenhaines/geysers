@@ -72,15 +72,15 @@ public class ClientView extends Composite {
 		LeftMenuLayout leftMenuLayout = new LeftMenuLayout();
 		mainView.add(leftMenuLayout);
 		mainView.setCellHeight(leftMenuLayout, "100%");
-		mainView.setCellWidth(leftMenuLayout, "30%");
-		leftMenuLayout.setSize("30%", "100%");
+		mainView.setCellWidth(leftMenuLayout, "20%\r\n");
+		leftMenuLayout.setSize("", "");
 		
 		
 		//create main view
 		CaptionPanel centerPanel = new CaptionPanel();
 		leftMenuLayout.setPanel(centerPanel);
 		topPanel.setPanel(centerPanel);
-		centerPanel.setCaptionText("center");
+		//centerPanel.setCaptionText("center");
 		mainView.add(centerPanel);
 		centerPanel.setHeight("200px");//todo
 		
@@ -94,12 +94,12 @@ public class ClientView extends Composite {
 		
 		//add User Info Panel
 		CaptionPanel userInfoPanel = new CaptionPanel();
-		userInfoPanel.setCaptionText("User Information");
+		//userInfoPanel.setCaptionText("User Information");
 		
 		lowView.add(userInfoPanel);
-		lowView.setCellWidth(userInfoPanel, "30%");
+		lowView.setCellWidth(userInfoPanel, "20%");
 		lowView.setCellHeight(userInfoPanel, "100%");
-		userInfoPanel.setSize("30%\r\n", "100%");
+		userInfoPanel.setSize("", "");
 		
 		UserInfo userInfo = new UserInfo();
 		userInfoPanel.setContentWidget(userInfo);
@@ -108,7 +108,7 @@ public class ClientView extends Composite {
 
 		//add Panel
 		CaptionPanel requestsPanel = new CaptionPanel();
-		requestsPanel.setCaptionText("Requests");
+		//requestsPanel.setCaptionText("Requests");
 		lowView.add(requestsPanel);
 		requestsPanel.setSize("281", "133");
 		

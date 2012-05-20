@@ -18,6 +18,8 @@ import com.google.gwt.user.client.ui.PasswordTextBox;
 import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.ValueBoxBase.TextAlignment;
+import com.google.gwt.event.dom.client.KeyPressHandler;
+import com.google.gwt.event.dom.client.KeyPressEvent;
 
 public class Main implements EntryPoint {
 	private final class LoginCallbackExecuter implements AsyncCallback<String> {
@@ -60,6 +62,7 @@ public class Main implements EntryPoint {
 	private Button btnLogin;
 	;
 	private Button btnAddViRequest;
+	private PasswordTextBox password_1;
 	//private final Message message = new Message(errorMsg(), Message.PULSATE, 0.75);
 	
 	
@@ -75,10 +78,18 @@ public class Main implements EntryPoint {
 		username.setAlignment(TextAlignment.LEFT);
 		rootPanel.add(username, 144, 131);
 		username.setSize("143px", "14px");
-		final PasswordTextBox password = new PasswordTextBox();
-		password.setAlignment(TextAlignment.LEFT);
-		rootPanel.add(password, 144, 168);
-		password.setSize("143px", "14px");
+		password_1 = new PasswordTextBox();
+		password_1.addKeyPressHandler(new KeyPressHandler() {
+			public void onKeyPress(KeyPressEvent event) {
+				
+//				if (event.getCharCode() == KeyCodes.KEY_ENTER){
+//					//todo same as for login button
+//				}
+			}
+		});
+		password_1.setAlignment(TextAlignment.LEFT);
+		rootPanel.add(password_1, 144, 168);
+		password_1.setSize("143px", "14px");
 		
 		btnLogin = new Button("Login");
 		btnLogin.addClickHandler(new ClickHandler() {
@@ -90,8 +101,8 @@ public class Main implements EntryPoint {
 				LoginServiceAsync login = (LoginServiceAsync)GWT.create(LoginService.class);
 				ServiceDefTarget endpoint = (ServiceDefTarget) login;
 				endpoint.setServiceEntryPoint(GWT.getModuleBaseURL()+"login");
-				login.isVIP(username.getText(),password.getText(),
-						new LoginCallbackExecuter(password, username, rootPanel));
+				login.isVIP(username.getText(),password_1.getText(),
+						new LoginCallbackExecuter(password_1, username, rootPanel));
 			}
 		});
 		rootPanel.add(btnLogin, 254, 202);

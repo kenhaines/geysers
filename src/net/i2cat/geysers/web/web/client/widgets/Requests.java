@@ -1,12 +1,14 @@
 package net.i2cat.geysers.web.web.client.widgets;
 
 import com.google.gwt.user.client.ui.Composite;
+import com.google.gwt.user.client.ui.ScrollPanel;
 import com.google.gwt.user.client.ui.VerticalPanel;
 import com.google.gwt.user.client.ui.FlexTable;
 import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.event.dom.client.ClickEvent;
+import com.google.gwt.user.client.ui.Label;
 
 public class Requests extends Composite {
 	private VerticalPanel verticalPanel;
@@ -14,6 +16,7 @@ public class Requests extends Composite {
 	private HorizontalPanel horizontalPanel;
 	private Button btnRemove;
 	private Button btnAddNew;
+	private Label lblRequests;
 	//private com.smartgwt.client.widgets.Button btnAddNew;
 	//private com.smartgwt.client.widgets.Button btnRemove;
 
@@ -22,7 +25,16 @@ public class Requests extends Composite {
 		verticalPanel = new VerticalPanel();
 		initWidget(verticalPanel);
 		
+		lblRequests = new Label("Requests");
+		lblRequests.setStyleName("gui-Label-list");
+		verticalPanel.add(lblRequests);
+		
+		ScrollPanel scroll = new ScrollPanel();
+		verticalPanel.add(scroll);
+		
+		
 		flexTable = new FlexTable();
+		flexTable.setStyleName("gui-listHeader");
 		
 		flexTable.setText(0, 0, "ID");
 		flexTable.setText(0, 1, "ResourceKinds");
@@ -30,7 +42,7 @@ public class Requests extends Composite {
 		flexTable.setText(0, 3, "City");
 		flexTable.setText(0, 4, "Status");
 		
-		verticalPanel.add(flexTable);
+		scroll.add(flexTable);
 		
 		horizontalPanel = new HorizontalPanel();
 		verticalPanel.add(horizontalPanel);

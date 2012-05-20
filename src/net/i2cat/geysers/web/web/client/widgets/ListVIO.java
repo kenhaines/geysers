@@ -14,10 +14,12 @@ public class ListVIO extends Composite {
 		initWidget(mainPanel);
 		
 		Label lblListOfVios = new Label("List of VIOs");
-		lblListOfVios.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_CENTER);
+		lblListOfVios.setStyleName("gui-Label-list");
+		lblListOfVios.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_LEFT);
 		mainPanel.add(lblListOfVios);
 		
 		FlexTable flexTable = new FlexTable();
+		flexTable.setStyleName("gui-listHeader");
 		flexTable.setText(0, 0, "ID");
 		flexTable.setText(0, 1, "Country");
 		flexTable.setText(0, 2, "City");

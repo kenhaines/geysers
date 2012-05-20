@@ -2,6 +2,7 @@ package net.i2cat.geysers.web.web.client.widgets;
 
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.FlowPanel;
+import com.google.gwt.user.client.ui.Label;
 
 
 
@@ -9,6 +10,7 @@ public class UserInfo extends Composite {
 	private com.google.gwt.user.client.ui.Label lblSmthHere;
 	private com.google.gwt.user.client.ui.Label lblNamespace;
 	private com.google.gwt.user.client.ui.Label lblLocation;
+	private Label lblUserInformation;
 
 	public UserInfo() {
 		
@@ -19,6 +21,10 @@ public class UserInfo extends Composite {
 		initWidget(verticalPanel);
 		verticalPanel.setHeight("100%");
 		verticalPanel.setWidth("100%");
+		
+		lblUserInformation = new Label("User Information");
+		lblUserInformation.setStyleName("gui-Label-list");
+		verticalPanel.add(lblUserInformation);
 		
 		lblSmthHere = new com.google.gwt.user.client.ui.Label("role");
 		verticalPanel.add(lblSmthHere);

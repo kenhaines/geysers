@@ -368,5 +368,17 @@ margin-top: 0px;
 	font-style: italic;
 	font-family: Calibri;
 }
+. {
+}
+.gui-listHeader {
+	font-weight: bold;
+	text-align: center;
+	background-color: lightgrey;
+}
+.gui-Label-list {
+	margin-left: 5px;
+	font-size: larger;
+	text-align: left;
+}
 
 

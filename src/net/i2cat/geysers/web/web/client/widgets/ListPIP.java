@@ -14,10 +14,12 @@ public class ListPIP extends Composite {
 		initWidget(mainPanel);
 		
 		Label lblListOfPips = new Label("List of PIPs");
-		lblListOfPips.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_CENTER);
+		lblListOfPips.setStyleName("gui-Label-list");
+		lblListOfPips.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_LEFT);
 		mainPanel.add(lblListOfPips);
 		
 		FlexTable flexTable = new FlexTable();
+		flexTable.setStyleName("gui-listHeader");
 		//add top cells to list
 		flexTable.setText(0, 0, "Role");
 		flexTable.setText(0, 1, "ResourceKinds");
