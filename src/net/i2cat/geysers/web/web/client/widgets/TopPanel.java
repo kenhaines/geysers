@@ -1,6 +1,9 @@
 package net.i2cat.geysers.web.web.client.widgets;
 
+import net.i2cat.geysers.web.web.client.Main;
+
 import com.google.gwt.user.client.Command;
+import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.CaptionPanel;
 import com.google.gwt.user.client.ui.Composite;
@@ -99,7 +102,10 @@ public class TopPanel extends Composite {
 	    
 	    MenuItem mntmLogout = new MenuItem("Logout", false, new Command() {
 	    	public void execute() {
-	    		//todo return to login page
+	    		//return to login page
+	    		
+	    		Window.Location.reload();
+	    		
 	    	}
 	    });
 	    menu.addItem(mntmLogout);

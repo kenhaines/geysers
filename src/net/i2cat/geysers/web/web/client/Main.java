@@ -20,7 +20,7 @@ import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.ValueBoxBase.TextAlignment;
 
 public class Main implements EntryPoint {
-	private final class LoginCallbackExecuter implements AsyncCallback<Boolean> {
+	private final class LoginCallbackExecuter implements AsyncCallback<String> {
 		private final PasswordTextBox password;
 		private final TextBox username;
 		private final RootPanel rootPanel;
@@ -38,18 +38,19 @@ public class Main implements EntryPoint {
 		}
 
 		@Override
-		public void onSuccess(Boolean result) {
-			if(result){
+		public void onSuccess(String result) {
+			if(result ==null){
+				username.setText("I dont know you");
+			}else if(result.equals("vip") ){
 				ClientView clientView= new ClientView();
 				rootPanel.clear();
 				rootPanel.add(clientView);
-			}else{
-				/*username.setText("I dont know you");
-				password.setText("");*/
-				//change when pip is ready
+			}else if(result.equals("pip")){
 				PIPClientView pipView= new PIPClientView();
 				rootPanel.clear();
 				rootPanel.add(pipView);
+			}else {
+				username.setText("I dont know your role");
 			}
 			
 		}

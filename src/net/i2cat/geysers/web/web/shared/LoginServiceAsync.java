@@ -4,6 +4,6 @@ import com.google.gwt.user.client.rpc.AsyncCallback;
 
 public interface LoginServiceAsync {
 
-	void isVIP(String username, String password, AsyncCallback<Boolean> callback);
+	void isVIP(String username, String password, AsyncCallback<String> callback);
 
 }

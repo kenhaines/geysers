@@ -4,6 +4,6 @@ import com.google.gwt.user.client.rpc.RemoteService;
 
 public interface LoginService extends RemoteService{
 
-	public boolean isVIP(String username, String password);
+	public String isVIP(String username, String password);
 	
 }
