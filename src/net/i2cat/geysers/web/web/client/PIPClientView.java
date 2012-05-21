@@ -11,6 +11,7 @@ import com.google.gwt.dom.client.Style.Unit;
 import com.google.gwt.user.client.ui.CaptionPanel;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.HTML;
+import com.google.gwt.user.client.ui.HTMLPanel;
 import com.google.gwt.user.client.ui.HasHorizontalAlignment;
 import com.google.gwt.user.client.ui.HasVerticalAlignment;
 import com.google.gwt.user.client.ui.HorizontalPanel;
@@ -28,6 +29,7 @@ public class PIPClientView extends Composite {
 
 	public PIPClientView() {
 		mainPanel = new VerticalPanel();
+		mainPanel.setStyleName("gui-layout-main");
 		initWidget(mainPanel);
 		setWidth("100%");
 		setHeight("100%");
@@ -54,9 +56,20 @@ public class PIPClientView extends Composite {
 		//create Main View (center of Page)
 		HorizontalPanel mainView = new HorizontalPanel();
 		mainPanel.add(mainView);
-		mainView.setWidth("100%");
-		mainView.setHeight("100%");
+		mainView.setSize("100%", "100%");
+		//mainView.setHeight("100%");
+		//mainView.setHeight("250px");
+	
+		//if mainView.height <"200px" then mainView.setHeight("400px");
 		mainView.setVerticalAlignment(HasVerticalAlignment.ALIGN_TOP);
+		
+		HTMLPanel panel = new HTMLPanel("");
+		mainPanel.add(panel);
+		mainPanel.setCellHorizontalAlignment(panel, HasHorizontalAlignment.ALIGN_CENTER);
+		panel.setSize("100%", "10%");
+		
+		HTML htmlNewHtml_1 = new HTML("<br>", true);
+		panel.add(htmlNewHtml_1);
 
 		
 		//create Lower View 
@@ -64,20 +77,24 @@ public class PIPClientView extends Composite {
 		mainPanel.add(lowView);
 		mainView.setCellHeight(lowView, "100%");		
 		
-		PipLeftMenuLayout pipLeftMenuLayout = new PipLeftMenuLayout();
-		mainView.add(pipLeftMenuLayout);
-		mainView.setCellHeight(pipLeftMenuLayout, "100%");
-		mainView.setCellWidth(pipLeftMenuLayout, "30%");
-		pipLeftMenuLayout.setSize("30%", "100%");
+		PipLeftMenuLayout pipleftMenuLayout = new PipLeftMenuLayout();
+		mainView.add(pipleftMenuLayout);
+		mainView.setCellHeight(pipleftMenuLayout, "100%");
+		mainView.setCellWidth(pipleftMenuLayout, "20%\r\n");
+		pipleftMenuLayout.setSize("", "");
 		
 		
 		//create main view
 		CaptionPanel centerPanel = new CaptionPanel();
-		pipLeftMenuLayout.setPanel(centerPanel);
+		pipleftMenuLayout.setPanel(centerPanel);
+		topPanel.setPanel(centerPanel);
 		//centerPanel.setCaptionText("center");
 		mainView.add(centerPanel);
+		centerPanel.setHeight("200px");//todo
 		
-		
+		ListPIP listPIP = new ListPIP();
+		centerPanel.setContentWidget(listPIP);
+		//listPIP.setSize("5cm", "3cm");
 
 		lowView.setWidth("100%");
 		lowView.setHeight("100%");
@@ -85,21 +102,23 @@ public class PIPClientView extends Composite {
 		
 		//add User Info Panel
 		CaptionPanel userInfoPanel = new CaptionPanel();
-		userInfoPanel.setCaptionText("User Information");
+		userInfoPanel.setStyleName("fieldset");
+		//userInfoPanel.setHeight(""+lowView.getOffsetHeight()+"px");
+		//userInfoPanel.setCaptionText("User Information");
 		
 		lowView.add(userInfoPanel);
-		lowView.setCellWidth(userInfoPanel, "30%");
+		lowView.setCellWidth(userInfoPanel, "20%");
 		lowView.setCellHeight(userInfoPanel, "100%");
-		userInfoPanel.setSize("30%\r\n", "100%");
+		userInfoPanel.setSize("", "");
 		
 		UserInfo userInfo = new UserInfo();
 		userInfoPanel.setContentWidget(userInfo);
-		userInfo.setSize("5cm", "3cm");
+		userInfo.setSize("100%", "");
 		
 
 		//add Panel
 		CaptionPanel requestsPanel = new CaptionPanel();
-		requestsPanel.setCaptionText("Requests");
+		//requestsPanel.setCaptionText("Requests");
 		lowView.add(requestsPanel);
 		requestsPanel.setSize("281", "133");
 		
@@ -107,25 +126,14 @@ public class PIPClientView extends Composite {
 		requestsPanel.setContentWidget(requests);
 		requests.setSize("5cm", "3cm");
 		
-		//footer
-		HorizontalPanel footerPanel = new HorizontalPanel();
-		mainPanel.add(footerPanel);
-		footerPanel.setSize("100%", "100%");
+		HTMLPanel footer = new HTMLPanel("");
+		mainPanel.add(footer);
+		footer.setSize("100%", "10%");
+		mainPanel.setCellHorizontalAlignment(footer, HasHorizontalAlignment.ALIGN_CENTER);
+		mainPanel.setCellVerticalAlignment(footer, HasVerticalAlignment.ALIGN_BOTTOM);
 		
-		LayoutPanel layoutPanel = new LayoutPanel();
-		footerPanel.add(layoutPanel);
-		layoutPanel.setSize("100%\r\n", "40px");
-		footerPanel.setCellVerticalAlignment(layoutPanel, HasVerticalAlignment.ALIGN_MIDDLE);
-		footerPanel.setCellHorizontalAlignment(layoutPanel, HasHorizontalAlignment.ALIGN_CENTER);
-		footerPanel.setCellWidth(layoutPanel, "100%");
-		footerPanel.setCellHeight(layoutPanel, "100%");
-		
-		Label lblc = new Label("(copyright)");
-		layoutPanel.add(lblc);
-		layoutPanel.setWidgetTopHeight(lblc, 0.0, Unit.PX, 42.0, Unit.PX);
-		lblc.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_CENTER);
-		lblc.setDirectionEstimator(true);
-
+		HTML htmlNewHtml = new HTML("<p>copyright</p>", true);
+		footer.add(htmlNewHtml);
 	}
 	
 	

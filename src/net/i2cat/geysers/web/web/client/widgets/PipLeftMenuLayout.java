@@ -11,25 +11,31 @@ import com.google.gwt.user.client.ui.TabPanel;
 import com.google.gwt.user.client.ui.Tree;
 import com.google.gwt.event.logical.shared.SelectionHandler;
 import com.google.gwt.event.logical.shared.SelectionEvent;
+import com.google.gwt.user.client.ui.TabLayoutPanel;
+import com.google.gwt.dom.client.Style.Unit;
+import com.google.gwt.user.client.ui.TreeItem;
+import com.google.gwt.user.client.ui.ScrollPanel;
+import com.google.gwt.user.client.ui.VerticalPanel;
 
 public class PipLeftMenuLayout extends Composite {
-	private MenuItem mntmRequestVi;
 	private String WidthPxl = "128px";
 	private CaptionPanel panel;
 
 	public PipLeftMenuLayout() {
 		
-		FlowPanel tab1Menu = new FlowPanel();
-		initWidget(tab1Menu);
-		tab1Menu.setHeight("100%");
-		tab1Menu.setWidth("100%");
+		final TabPanel tabPanel = new TabPanel();
+		tabPanel.setStyleName("gwt-TabBar");
 		
-		TabPanel tabPanel = new TabPanel();
+		
+		initWidget(tabPanel);
+		
+		VerticalPanel verticalPanel = new VerticalPanel();
+		verticalPanel.setStyleName("gwt-TabBar .gwt-TabBarFirst");
+		tabPanel.add(verticalPanel, "PIP Menu", false);
+		verticalPanel.setSize("5cm", "4cm");
+		
 		tabPanel.addSelectionHandler(new SelectionHandler<Integer>() {
 			public void onSelection(SelectionEvent<Integer> event) {
-				//here, see which one was selected
-				// and do something like
-				// if(operation1)... panel.add(operation1PAnel);
 				if(panel!=null){
 					ListPIP listPIP = new ListPIP();
 					panel.setContentWidget(listPIP);
@@ -38,53 +44,74 @@ public class PipLeftMenuLayout extends Composite {
 				
 			}
 		});
-		tab1Menu.add(tabPanel);
 		
 		MenuBar menuBar = new MenuBar(true);
-		tabPanel.add(menuBar, "PIP", false);
-		menuBar.setSize("128px\r\n", "3cm");
-		menuBar.setAutoOpen(true);
-		//menu.setWidth("100px");
-		//menu.setHeight("25px");
+		verticalPanel.add(menuBar);
+		menuBar.setStyleName("gwt-TabBar .gwt-TabBarFirst");
 		menuBar.setAnimationEnabled(true);
-		MenuBar menuBar_1 = new MenuBar(true);
+		menuBar.setAutoOpen(true);
 		
-		MenuItem mntmVi = new MenuItem("Physical Resources", false, menuBar_1);
-		mntmVi.setStyleName("gwt-MenuLeft-item");
+		MenuItem mntmPr = new MenuItem("Physical Resources", false, (Command) null);
+		mntmPr.setStyleName("gwt-MenuLeft-item");
+		menuBar.addItem(mntmPr);
 		
-		MenuItem mntmShowVis = new MenuItem("search PR", false, (Command) null);
-		menuBar_1.addItem(mntmShowVis);
+		MenuItem mntmShowPr = new MenuItem("show PR", false, new Command() {
+			public void execute() {
+				tabPanel.selectTab(1);				
+			}
+		});
+		menuBar.addItem(mntmShowPr);
+		
+		MenuItemSeparator separator_2 = new MenuItemSeparator();
+		separator_2.setStyleName("gwt-MenuItem");
+		menuBar.addSeparator(separator_2);
+		
+		MenuItem mntmSearchPr = new MenuItem("search PR", false, (Command) null);
+		menuBar.addItem(mntmSearchPr);
 		
 		MenuItemSeparator separator = new MenuItemSeparator();
-		menuBar_1.addSeparator(separator);
+		menuBar.addSeparator(separator);
 		
-		mntmRequestVi = new MenuItem("add PR", false, new Command() {
-			public void execute() {
-				//AddRequest.addRequestCall(new AddRequest());
-			}
-			
-		});
-		menuBar_1.addItem(mntmRequestVi);
+		MenuItem mntmNewItem_1 = new MenuItem("add PR", false, (Command) null);
+		menuBar.addItem(mntmNewItem_1);
 		
 		MenuItemSeparator separator_1 = new MenuItemSeparator();
-		menuBar_1.addSeparator(separator_1);
+		menuBar.addSeparator(separator_1);
 		
-		MenuItem mntmRemoveRequest = new MenuItem("remove PR", false, (Command) null);
-		menuBar_1.addItem(mntmRemoveRequest);
-		menuBar.addItem(mntmVi);
+		MenuItem mntmRemovePr = new MenuItem("remove PR", false, (Command) null);
+		menuBar.addItem(mntmRemovePr);
 		
-		MenuItem mntmPips = new MenuItem("List of VIPs", false, (Command) null);
-		mntmPips.setStyleName("gwt-MenuLeft-item");
-		menuBar.addItem(mntmPips);
+		MenuItem mntmNewItem = new MenuItem("List of VIPs", false, new Command() {
+			public void execute() {
+				if(panel!=null){
+					//ListPIP listPIP = new ListPIP();
+					//panel.setContentWidget(listPIP);
+				}
+			}
+		});
+		mntmNewItem.setStyleName("gwt-MenuLeft-item");
+		menuBar.addItem(mntmNewItem);
 		
-		MenuItem mntmVios = new MenuItem("Register inter-domain link", false, (Command) null);
-		mntmVios.setStyleName("gwt-MenuLeft-item");
-		menuBar.addItem(mntmVios);
+		MenuItem mntmRegisterInterdomainLink = new MenuItem("Register Inter-Domain Link", false, new Command() {
+			public void execute() {
+				//todo - upload file?
+			}
+		});
+		mntmRegisterInterdomainLink.setStyleName("gwt-MenuLeft-item");
+		menuBar.addItem(mntmRegisterInterdomainLink);
+		
+		ScrollPanel scrollPanel = new ScrollPanel();
+		tabPanel.add(scrollPanel, "PR", false);
+		scrollPanel.setSize("5cm", "4cm");
+		//scrollPanel.setWidth(""+menuBar.getOffsetWidth()+"px");
+		//scrollPanel.setPixelSize(menuBar.getOffsetWidth(),menuBar.getOffsetHeight());
 		
 		Tree tree = new Tree();
-		tabPanel.add(tree, "PR", false);
-		tree.setSize(WidthPxl, "3cm");
-		//sctnstcksctnVios.addItem(sectionStack);
+		scrollPanel.setWidget(tree);
+		tree.setSize("100%", "100%");
+		
+		TreeItem trtmPr = new TreeItem("PR");
+		tree.addItem(trtmPr);
 		
 		tabPanel.selectTab(0);
 	}

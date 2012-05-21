@@ -34,7 +34,7 @@ a:visited {
 }
 
 .gwt-MenuItem {
-	font-size: 80%;
+	font-size: 100%;
 	margin: 1px;
 	cursor: default;
 }
@@ -88,9 +88,9 @@ a:visited {
 
 .gwt-TabBar .gwt-TabBarFirst {
 	height: 100%;
-	border-bottom: 1px solid #87b3ff;
-	border-right: 1px solid #87b3ff;
 	padding-left: 3px;
+	border-right: 1px solid #87b3ff;
+	border-bottom: 1px solid #87b3ff;
 }
 
 .gwt-TabBar .gwt-TabBarRest {
@@ -342,8 +342,8 @@ margin-top: 0px;
   margin: 0px 0px 0px 3px;
 }
 .gwt-MenuLeft-item {
-	padding-right: 70px;
-	padding-left: 50px;
+	padding-right: 40px;
+	padding-left: 10px;
 	border: Gray;
 	font-variant: small-caps;
 	font-size: 14px;
@@ -379,6 +379,9 @@ margin-top: 0px;
 	margin-left: 5px;
 	font-size: larger;
 	text-align: left;
+}
+fieldset {
+	border: 1px solid Gray;
 }
 
 
