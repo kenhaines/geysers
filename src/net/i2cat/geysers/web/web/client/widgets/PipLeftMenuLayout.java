@@ -81,6 +81,17 @@ public class PipLeftMenuLayout extends Composite {
 		MenuItem mntmRemovePr = new MenuItem("remove PR", false, (Command) null);
 		menuBar.addItem(mntmRemovePr);
 		
+		MenuItem mntmShowPrTopology = new MenuItem("Show PR Topology", false, new Command() {
+			public void execute() {
+				if(panel!=null){
+					TopologyPR topologyPR = new TopologyPR();
+					panel.setContentWidget(topologyPR);
+				}
+			}
+		});
+		mntmShowPrTopology.setStyleName("gwt-MenuLeft-item");
+		menuBar.addItem(mntmShowPrTopology);
+		
 		MenuItem mntmNewItem = new MenuItem("List of VIPs", false, new Command() {
 			public void execute() {
 				if(panel!=null){

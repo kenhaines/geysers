@@ -19,8 +19,7 @@ public class UserInfo extends Composite {
 		FlowPanel verticalPanel = new FlowPanel();
 		//pnlClientInformation.add(verticalPanel);
 		initWidget(verticalPanel);
-		verticalPanel.setHeight("5cm");
-		verticalPanel.setWidth("3cm");
+		verticalPanel.setSize("5cm", "4cm");
 		
 		lblUserInformation = new Label("User Information");
 		lblUserInformation.setStyleName("gui-Label-list");
@@ -34,6 +33,8 @@ public class UserInfo extends Composite {
 		
 		lblLocation = new com.google.gwt.user.client.ui.Label("location");
 		verticalPanel.add(lblLocation);	
+		//if PIP add more fields
+		//"Role", "ResourceKinds", "Domains", "Granularity", "Country","City","Coordinates"
 		
 		
 		//pnlClientInformation.setCollapsible(true);

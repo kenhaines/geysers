@@ -19,10 +19,10 @@ public class ListVIP extends Composite {
 		
 		FlexTable flexTable = new FlexTable();
 		flexTable.setStyleName("gui-listHeader");
-		flexTable.setText(0, 0, "ID");
+		flexTable.setText(0, 0, "Namespace");
 		flexTable.setText(0, 1, "Country");
 		flexTable.setText(0, 2, "City");
-		flexTable.setText(0, 3, "VI requested");
+		//flexTable.setText(0, 3, "VI requested");
 		//to do VI: resource kinds, status of the VI (down, accepted, scheduled, completed, etc.)
 		
 		mainPanel.add(flexTable);

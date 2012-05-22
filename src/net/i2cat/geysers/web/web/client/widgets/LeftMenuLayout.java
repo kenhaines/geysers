@@ -15,6 +15,7 @@ import com.google.gwt.user.client.ui.TabPanel;
 import com.google.gwt.user.client.ui.Tree;
 import com.google.gwt.user.client.ui.TreeItem;
 import com.google.gwt.user.client.ui.VerticalPanel;
+import com.google.gwt.user.client.ui.MenuItemSeparator;
 
 public class LeftMenuLayout extends Composite {
 	private MenuItem mntmRequestVi;
@@ -54,7 +55,9 @@ public class LeftMenuLayout extends Composite {
 		verticalPanel.setSize("5cm", "3cm");
 		
 		MenuBar menuBar = new MenuBar(true);
+		menuBar.setStyleName("gwt-TabBar .gwt-TabBarFirst");
 		verticalPanel.add(menuBar);
+		menuBar.setSize("188px", "158px");
 		
 		menuBar.setAutoOpen(true);
 		//menu.setWidth("100px");
@@ -64,6 +67,7 @@ public class LeftMenuLayout extends Composite {
 		MenuItem mntmVi = new MenuItem("Virtual Infrastructure", false, (Command) null);
 		mntmVi.setStyleName("gwt-MenuLeft-item");
 		menuBar.addItem(mntmVi);
+		mntmVi.setSize("184", "19");
 		
 		MenuItem mntmShowVis = new MenuItem("show VI details", false, new Command() {
 			public void execute() {
@@ -73,6 +77,9 @@ public class LeftMenuLayout extends Composite {
 		});
 		menuBar.addItem(mntmShowVis);
 		
+		MenuItemSeparator separator = new MenuItemSeparator();
+		menuBar.addSeparator(separator);
+		
 		mntmRequestVi = new MenuItem("add request", false, new Command() {
 			public void execute() {
 				AddRequest.addRequestCall(new AddRequest());
@@ -81,9 +88,21 @@ public class LeftMenuLayout extends Composite {
 		});
 		menuBar.addItem(mntmRequestVi);
 		
+		MenuItemSeparator separator_1 = new MenuItemSeparator();
+		menuBar.addSeparator(separator_1);
+		
 		
 		MenuItem mntmRemoveRequest = new MenuItem("remove request", false, (Command) null);
 		menuBar.addItem(mntmRemoveRequest);
+		
+		MenuItem mntmShowViTopology = new MenuItem("Show VI Topology", false, new Command() {
+			public void execute() {
+				TopologyVI topologyVI = new TopologyVI();
+				panel.setContentWidget(topologyVI);
+			}
+		});
+		mntmShowViTopology.setStyleName("gwt-MenuLeft-item");
+		menuBar.addItem(mntmShowViTopology);
 		
 		MenuItem mntmPips = new MenuItem("List of PIPs", false, new Command() {
 			public void execute() {
@@ -97,6 +116,7 @@ public class LeftMenuLayout extends Composite {
 		});
 		mntmPips.setStyleName("gwt-MenuLeft-item");
 		menuBar.addItem(mntmPips);
+		mntmPips.setSize("184", "19");
 		
 		MenuItem mntmVios = new MenuItem("List of VIOs", false, new Command() {
 			public void execute() {
@@ -110,6 +130,7 @@ public class LeftMenuLayout extends Composite {
 		});
 		mntmVios.setStyleName("gwt-MenuLeft-item");
 		menuBar.addItem(mntmVios);
+		mntmVios.setSize("184", "19");
 		
 		//add second tab
 		ScrollPanel scrollPanel = new ScrollPanel();

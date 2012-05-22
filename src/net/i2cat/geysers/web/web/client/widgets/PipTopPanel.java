@@ -9,15 +9,13 @@ import com.google.gwt.user.client.ui.MenuBar;
 import com.google.gwt.user.client.ui.MenuItem;
 import com.google.gwt.user.client.ui.MenuItemSeparator;
 
-
-
-public class TopPanel extends Composite {
+public class PipTopPanel extends Composite {
 
 	protected static final LeftMenuLayout LeftMenuLayout = null;
 	Requests requests = new Requests();
 	private CaptionPanel panel;
 	
-	public TopPanel() {
+	public PipTopPanel() {
 		
 		LayoutPanel layoutPanel = new LayoutPanel();
 		initWidget(layoutPanel);
@@ -34,42 +32,18 @@ public class TopPanel extends Composite {
 	    
 	    MenuItem mntmMenu = new MenuItem("Menu", false, menuBar_1);
 	    
-	    MenuItem mntmVi = new MenuItem("VI", false, new Command() {
+	    MenuItem mntmpr = new MenuItem("PR", false, new Command() {
 	    	public void execute() {
 	    		//LeftMenuLayout left = new LeftMenuLayout;todo
 	    	}
 	    });
-	    mntmVi.setHTML("show VI");
-	    menuBar_1.addItem(mntmVi);
+	    mntmpr.setHTML("show PR");
+	    menuBar_1.addItem(mntmpr);
 	    
 	    MenuItemSeparator separator_1 = new MenuItemSeparator();
 	    menuBar_1.addSeparator(separator_1);
 	    
-	    MenuItem mntmAddRequest = new MenuItem("add request", false, new Command() {
-	    	public void execute() {
-	    		AddRequest.addRequestCall(new AddRequest());
-	    	}
-	    });
-	    menuBar_1.addItem(mntmAddRequest);
-	    
-	    MenuItemSeparator separator_2 = new MenuItemSeparator();
-	    menuBar_1.addSeparator(separator_2);
-	    
-	    MenuItem mntmShowListOf = new MenuItem("show list of PIPs", false, new Command() {
-	    	public void execute() {
-	    		if(panel!=null){
-					ListPIP listPIP = new ListPIP();
-					panel.setContentWidget(listPIP);
-					//listPIP.setSize("5cm", "3cm");
-				}
-	    	}
-	    });
-	    menuBar_1.addItem(mntmShowListOf);
-	    
-	    MenuItemSeparator separator_3 = new MenuItemSeparator();
-	    menuBar_1.addSeparator(separator_3);
-	    
-	    MenuItem mntmShowListOf_1 = new MenuItem("show list of VIOs", false, new Command() {
+	    MenuItem mntmShowListOf_1 = new MenuItem("show PR topology", false, new Command() {
 	    	public void execute() {
 		    		if(panel!=null){
 						ListVIO listVIO = new ListVIO();
@@ -80,6 +54,31 @@ public class TopPanel extends Composite {
 	    	}
 	    });
 	    menuBar_1.addItem(mntmShowListOf_1);
+	    
+	    MenuItemSeparator separator_2 = new MenuItemSeparator();
+	    menuBar_1.addSeparator(separator_2);
+	    
+	    MenuItem mntmShowListOf = new MenuItem("show list of VIPs", false, new Command() {
+	    	public void execute() {
+	    		if(panel!=null){
+					ListVIP listVIP = new ListVIP();
+					panel.setContentWidget(listVIP);
+					//listPIP.setSize("5cm", "3cm");
+				}
+	    	}
+	    });
+	    mntmShowListOf.setHTML("show list of VIPs");
+	    menuBar_1.addItem(mntmShowListOf);
+	    
+	    MenuItemSeparator separator_3 = new MenuItemSeparator();
+	    menuBar_1.addSeparator(separator_3);
+	    
+	    MenuItem mntmAddRequest = new MenuItem("add request", false, new Command() {
+	    	public void execute() {
+	    		AddRequest.addRequestCall(new AddRequest());
+	    	}
+	    });
+	    menuBar_1.addItem(mntmAddRequest);
 	    menu.addItem(mntmMenu);
 	    MenuBar menuBar = new MenuBar(true);
 	    
@@ -114,4 +113,5 @@ public class TopPanel extends Composite {
 		this.panel = panel;
 		
 	}
+
 }
