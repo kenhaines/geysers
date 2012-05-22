@@ -371,14 +371,18 @@ margin-top: 0px;
 . {
 }
 .gui-listHeader {
+	border: 1px Gray;
 	font-weight: bold;
 	text-align: center;
-	background-color: lightgrey;
 }
 .gui-Label-list {
-	margin-left: 5px;
-	font-size: larger;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	font-size: small;
+	font-weight: bold;
+	text-indent: 5px;
 	text-align: left;
+	background-color: Silver;
 }
 fieldset {
 	border: 1px solid Gray;

@@ -19,8 +19,8 @@ public class UserInfo extends Composite {
 		FlowPanel verticalPanel = new FlowPanel();
 		//pnlClientInformation.add(verticalPanel);
 		initWidget(verticalPanel);
-		verticalPanel.setHeight("100%");
-		verticalPanel.setWidth("100%");
+		verticalPanel.setHeight("5cm");
+		verticalPanel.setWidth("3cm");
 		
 		lblUserInformation = new Label("User Information");
 		lblUserInformation.setStyleName("gui-Label-list");

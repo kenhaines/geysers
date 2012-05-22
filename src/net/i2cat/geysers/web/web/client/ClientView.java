@@ -62,6 +62,9 @@ public class ClientView extends Composite {
 		mainPanel.add(panel);
 		mainPanel.setCellHorizontalAlignment(panel, HasHorizontalAlignment.ALIGN_CENTER);
 		panel.setSize("100%", "10%");
+		
+		HTML html = new HTML("</br>", true);
+		panel.add(html);
 
 		
 		//create Lower View 

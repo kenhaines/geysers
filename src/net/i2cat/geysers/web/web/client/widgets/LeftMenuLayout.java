@@ -1,6 +1,5 @@
 package net.i2cat.geysers.web.web.client.widgets;
 
-import com.google.gwt.dom.client.Style.Unit;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.event.logical.shared.SelectionEvent;
@@ -12,7 +11,6 @@ import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.MenuBar;
 import com.google.gwt.user.client.ui.MenuItem;
 import com.google.gwt.user.client.ui.ScrollPanel;
-import com.google.gwt.user.client.ui.TabLayoutPanel;
 import com.google.gwt.user.client.ui.TabPanel;
 import com.google.gwt.user.client.ui.Tree;
 import com.google.gwt.user.client.ui.TreeItem;
@@ -53,7 +51,7 @@ public class LeftMenuLayout extends Composite {
 		VerticalPanel verticalPanel = new VerticalPanel();
 		verticalPanel.setStyleName("gwt-TabBar .gwt-TabBarFirst");
 		tabPanel.add(verticalPanel, "VIP Menu", false);
-		verticalPanel.setSize("5cm", "4cm");
+		verticalPanel.setSize("5cm", "3cm");
 		
 		MenuBar menuBar = new MenuBar(true);
 		verticalPanel.add(menuBar);
@@ -116,8 +114,8 @@ public class LeftMenuLayout extends Composite {
 		//add second tab
 		ScrollPanel scrollPanel = new ScrollPanel();
 		scrollPanel.setStyleName("gwt-TabBar .gwt-TabBarRest");
-		tabPanel.add(scrollPanel, "PR", false);
-		scrollPanel.setSize("5cm", "4cm");
+		tabPanel.add(scrollPanel, "VI", false);
+		scrollPanel.setSize("5cm", "3cm");
 		
 		Tree tree = new Tree();
 		scrollPanel.setWidget(tree);
@@ -148,8 +146,6 @@ public class LeftMenuLayout extends Composite {
 		});
 		TreeItem treeItem = trtmVi.addItem(label);
 		trtmVi.setState(true);
-		
-		
 		
 		//tabPanel.setSize(""+menuBar.getOffsetWidth()+"px",""+menuBar.getOffsetHeight()+"px");
 		

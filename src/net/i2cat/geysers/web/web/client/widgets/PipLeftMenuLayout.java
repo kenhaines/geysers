@@ -32,7 +32,7 @@ public class PipLeftMenuLayout extends Composite {
 		VerticalPanel verticalPanel = new VerticalPanel();
 		verticalPanel.setStyleName("gwt-TabBar .gwt-TabBarFirst");
 		tabPanel.add(verticalPanel, "PIP Menu", false);
-		verticalPanel.setSize("5cm", "4cm");
+		verticalPanel.setSize("5cm", "3cm");
 		
 		tabPanel.addSelectionHandler(new SelectionHandler<Integer>() {
 			public void onSelection(SelectionEvent<Integer> event) {
@@ -84,8 +84,8 @@ public class PipLeftMenuLayout extends Composite {
 		MenuItem mntmNewItem = new MenuItem("List of VIPs", false, new Command() {
 			public void execute() {
 				if(panel!=null){
-					//ListPIP listPIP = new ListPIP();
-					//panel.setContentWidget(listPIP);
+					ListVIP listVIP = new ListVIP();
+					panel.setContentWidget(listVIP);
 				}
 			}
 		});
@@ -102,7 +102,7 @@ public class PipLeftMenuLayout extends Composite {
 		
 		ScrollPanel scrollPanel = new ScrollPanel();
 		tabPanel.add(scrollPanel, "PR", false);
-		scrollPanel.setSize("5cm", "4cm");
+		scrollPanel.setSize("5cm", "3cm");
 		//scrollPanel.setWidth(""+menuBar.getOffsetWidth()+"px");
 		//scrollPanel.setPixelSize(menuBar.getOffsetWidth(),menuBar.getOffsetHeight());
 		
