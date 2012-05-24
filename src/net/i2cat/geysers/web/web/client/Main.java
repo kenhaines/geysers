@@ -76,7 +76,7 @@ public class Main implements EntryPoint {
 		
 		final TextBox username = new TextBox();
 		username.setAlignment(TextAlignment.LEFT);
-		rootPanel.add(username, 144, 131);
+		rootPanel.add(username, 165, 167);
 		username.setSize("143px", "14px");
 		password_1 = new PasswordTextBox();
 		password_1.addKeyPressHandler(new KeyPressHandler() {
@@ -88,7 +88,7 @@ public class Main implements EntryPoint {
 			}
 		});
 		password_1.setAlignment(TextAlignment.LEFT);
-		rootPanel.add(password_1, 144, 168);
+		rootPanel.add(password_1, 165, 204);
 		password_1.setSize("143px", "14px");
 		
 		btnLogin = new Button("Login");
@@ -105,17 +105,17 @@ public class Main implements EntryPoint {
 						new LoginCallbackExecuter(password_1, username, rootPanel));
 			}
 		});
-		rootPanel.add(btnLogin, 254, 202);
+		rootPanel.add(btnLogin, 275, 238);
 		btnLogin.setSize("45px", "22px");
 		
 		Label lblUsername = new Label("Username");
 		lblUsername.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_CENTER);
 		lblUsername.setStyleName("gui-Label");
-		rootPanel.add(lblUsername, 5, 131);
+		rootPanel.add(lblUsername, 26, 167);
 		
 		Label lblPassword = new Label("Password");
 		lblPassword.setStyleName("gui-Label");
-		rootPanel.add(lblPassword, 5, 168);
+		rootPanel.add(lblPassword, 26, 204);
 		lblPassword.setSize("60px", "19px");
 		
 		btnAddViRequest = new Button("Add VI request");
@@ -127,17 +127,17 @@ public class Main implements EntryPoint {
 
 			
 		});
-		rootPanel.add(btnAddViRequest, 199, 268);
+		rootPanel.add(btnAddViRequest, 220, 304);
 		btnAddViRequest.setSize("100px", "22px");
 		
 		Label lblVioAddVi = new Label("VIO? Add VI request");
 		lblVioAddVi.setStyleName("gui-Label");
-		rootPanel.add(lblVioAddVi, 5, 271);
+		rootPanel.add(lblVioAddVi, 26, 307);
 		lblVioAddVi.setSize("128px", "19px");
 		
 		Label lblSignIn = new Label("Sign In to GEYSERS LICL");
 		lblSignIn.setStyleName("gui-Label-big");
 		
-		rootPanel.add(lblSignIn, 5, 82);
+		rootPanel.add(lblSignIn, 26, 118);
 		}
 }

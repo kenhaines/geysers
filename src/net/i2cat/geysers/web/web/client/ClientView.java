@@ -117,7 +117,7 @@ public class ClientView extends Composite {
 		
 		Requests requests = new Requests();
 		requestsPanel.setContentWidget(requests);
-		requests.setSize("5cm", "3cm");
+		requests.setSize("100%", "100%");
 		
 		HTMLPanel footer = new HTMLPanel("");
 		mainPanel.add(footer);

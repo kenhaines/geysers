@@ -92,6 +92,14 @@ public class PipLeftMenuLayout extends Composite {
 		mntmShowPrTopology.setStyleName("gwt-MenuLeft-item");
 		menuBar.addItem(mntmShowPrTopology);
 		
+		MenuItem mntmRegisterInterdomainLink = new MenuItem("Register Inter-Domain Link", false, new Command() {
+			public void execute() {
+				//todo - upload file?
+			}
+		});
+		mntmRegisterInterdomainLink.setStyleName("gwt-MenuLeft-item");
+		menuBar.addItem(mntmRegisterInterdomainLink);
+		
 		MenuItem mntmNewItem = new MenuItem("List of VIPs", false, new Command() {
 			public void execute() {
 				if(panel!=null){
@@ -100,16 +108,9 @@ public class PipLeftMenuLayout extends Composite {
 				}
 			}
 		});
+		//todo - add register multiple links or multiple PRs from config
 		mntmNewItem.setStyleName("gwt-MenuLeft-item");
 		menuBar.addItem(mntmNewItem);
-		
-		MenuItem mntmRegisterInterdomainLink = new MenuItem("Register Inter-Domain Link", false, new Command() {
-			public void execute() {
-				//todo - upload file?
-			}
-		});
-		mntmRegisterInterdomainLink.setStyleName("gwt-MenuLeft-item");
-		menuBar.addItem(mntmRegisterInterdomainLink);
 		
 		ScrollPanel scrollPanel = new ScrollPanel();
 		tabPanel.add(scrollPanel, "PR", false);

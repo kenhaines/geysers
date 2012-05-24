@@ -351,13 +351,14 @@ margin-top: 0px;
 	font-family: Calibri;
 	text-align: left;
 	background-color: #cccccc;
+	cursor: default;
 }
-.gwt-MenuLeft-item-submenu {
+.gwt-MenuLeft-item-selected {
+	background-color: mediumaquamarine;
 }
 .gui-Label-big {
 	color: Navy;
 	margin-top: 20px;
-	margin-bottom: 20px;
 	margin-left: 5px;
 	font-size: large;
 	font-family: Calibri;

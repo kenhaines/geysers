@@ -9,6 +9,7 @@ import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.user.client.ui.Label;
+import com.google.gwt.user.client.ui.HasHorizontalAlignment;
 
 public class Requests extends Composite {
 	private VerticalPanel verticalPanel;
@@ -26,6 +27,7 @@ public class Requests extends Composite {
 		initWidget(verticalPanel);
 		
 		lblRequests = new Label("Requests");
+		lblRequests.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_LEFT);
 		lblRequests.setStyleName("gui-Label-list");
 		verticalPanel.add(lblRequests);
 		

@@ -55,7 +55,7 @@ public class LeftMenuLayout extends Composite {
 		verticalPanel.setSize("5cm", "3cm");
 		
 		MenuBar menuBar = new MenuBar(true);
-		menuBar.setStyleName("gwt-TabBar .gwt-TabBarFirst");
+		menuBar.setStyleName("gwt-MenuBar-vertical");
 		verticalPanel.add(menuBar);
 		menuBar.setSize("188px", "158px");
 		
@@ -128,6 +128,7 @@ public class LeftMenuLayout extends Composite {
 				}
 			}
 		});
+		//todo add Re-plan request
 		mntmVios.setStyleName("gwt-MenuLeft-item");
 		menuBar.addItem(mntmVios);
 		mntmVios.setSize("184", "19");
