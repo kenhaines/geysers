@@ -77,45 +77,45 @@ a:visited {
 }
 
 .gwt-TabPanelBottom {
-	border-left: 1px solid #87b3ff;
-	border-right: 1px solid #87b3ff;
-	border-bottom: 1px solid #87b3ff;
+	border-left: 1px solid #9A9797;
+	border-right: 1px solid #9A9797;
+	border-bottom: 1px solid #9A9797;
 }
 
 .gwt-TabBar {
 	font-size: smaller;
 }
 
-.gwt-TabBar .gwt-TabBarFirst {
+.gwt-TabBar2 .gwt-TabBarFirst {
 	height: 100%;
 	padding-left: 3px;
-	border-right: 1px solid #87b3ff;
-	border-bottom: 1px solid #87b3ff;
+	border-right: 1px solid #9A9797;
+	border-bottom: 1px solid #9A9797;
 }
 
 .gwt-TabBar .gwt-TabBarRest {
-	border-bottom: 1px solid #87b3ff;
+	border-bottom: 1px solid #9A9797;
 	padding-right: 3px;
 }
 
 .gwt-TabBar .gwt-TabBarItem {
-	border-top: 1px solid #87b3ff;
-	border-bottom: 1px solid #87b3ff;
+	border-top: 1px solid #9A9797;
+	border-bottom: 1px solid #9A9797;
 	padding: 2px;
 	cursor: hand;
 	white-space: nowrap;
-	border-right: 1px solid #87b3ff;
+	border-right: 1px solid #9A9797;
 }
 
 .gwt-TabBar .gwt-TabBarItem-selected {
-	font-weight: bold;
-	background-color: #e8eef7;
-	border-top: 1px solid #87b3ff;
-	border-right: 1px solid #87b3ff;
-	border-bottom: 1px solid #e8eef7;
 	padding: 2px;
-	cursor: default;
+	border-top: 1px solid #9A9797;
+	border-right: 1px solid #9A9797;
+	border-bottom: 1px solid #9A9797;
+	font-weight: bold;
 	white-space: nowrap;
+	background-color: Silver;
+	cursor: default;
 }
 
 .gwt-PushButton-up {
@@ -342,19 +342,20 @@ margin-top: 0px;
   margin: 0px 0px 0px 3px;
 }
 .gwt-MenuLeft-item {
+	color: #FFFFFF;
 	padding-right: 50px;
 	padding-left: 10px;
 	border: Gray;
-	font-variant: small-caps;
+	font-variant: normal;
 	font-size: 14px;
 	font-style: normal;
 	font-family: Calibri;
 	text-align: left;
-	background-color: #cccccc;
+	background-color: #9A9797;
 	cursor: default;
 }
 .gwt-MenuLeft-item-selected {
-	background-color: mediumaquamarine;
+	background-color: #625D5C;
 }
 .gui-Label-big {
 	color: Navy;
@@ -387,6 +388,11 @@ margin-top: 0px;
 }
 fieldset {
 	border: 1px solid Gray;
+}
+.gwt-MenuItemTop {
+	font-size: 100%;
+	margin: 1px;
+	cursor: default;
 }
 
 

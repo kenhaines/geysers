@@ -50,7 +50,7 @@ public class LeftMenuLayout extends Composite {
 		//MENU MAIN
 		
 		VerticalPanel verticalPanel = new VerticalPanel();
-		verticalPanel.setStyleName("gwt-TabBar .gwt-TabBarFirst");
+		verticalPanel.setStyleName("gwt-TabBar .gwt-TabBarItem-selected");
 		tabPanel.add(verticalPanel, "VIP Menu", false);
 		verticalPanel.setSize("5cm", "3cm");
 		
