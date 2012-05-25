@@ -15,6 +15,14 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
   <servlet-name>loginServiceImplementation</servlet-name>
   <url-pattern>/net.i2cat.geysers.web.web/login</url-pattern>
 </servlet-mapping>
+<servlet>
+  <servlet-name>infrastructureManagementServiceImpl</servlet-name>
+  <servlet-class>net.i2cat.geysers.web.web.server.InfrastructureManagementServiceImpl</servlet-class>
+</servlet>
+<servlet-mapping>
+  <servlet-name>infrastructureManagementServiceImpl</servlet-name>
+  <url-pattern>/net.i2cat.geysers.web.web/PRManagement</url-pattern>
+</servlet-mapping>
 
 <!-- Default page to serve -->
 	<welcome-file-list>

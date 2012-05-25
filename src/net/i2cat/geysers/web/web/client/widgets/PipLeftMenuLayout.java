@@ -84,7 +84,7 @@ public class PipLeftMenuLayout extends Composite {
 		MenuItem mntmShowPrTopology = new MenuItem("Show PR Topology", false, new Command() {
 			public void execute() {
 				if(panel!=null){
-					TopologyPR topologyPR = new TopologyPR();
+					PRtable topologyPR = new PRtable();
 					panel.setContentWidget(topologyPR);
 				}
 			}
