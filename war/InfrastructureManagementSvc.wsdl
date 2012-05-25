@@ -1,0 +1,475 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="InfrastructureManagementSvcService" targetNamespace="http://management.pr.licl.bundles.geysers.eu/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://management.pr.licl.bundles.geysers.eu/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://management.pr.licl.bundles.geysers.eu/" elementFormDefault="unqualified" targetNamespace="http://management.pr.licl.bundles.geysers.eu/" version="1.0">
+<xs:element name="addDomain" type="tns:addDomain"/>
+<xs:element name="addDomainResponse" type="tns:addDomainResponse"/>
+<xs:element name="addInterdomainLink" type="tns:addInterdomainLink"/>
+<xs:element name="addInterdomainLinkResponse" type="tns:addInterdomainLinkResponse"/>
+<xs:element name="addLink" type="tns:addLink"/>
+<xs:element name="addLinkResponse" type="tns:addLinkResponse"/>
+<xs:element name="addMultipleLinks" type="tns:addMultipleLinks"/>
+<xs:element name="addMultipleLinksResponse" type="tns:addMultipleLinksResponse"/>
+<xs:element name="addMultiplePRs" type="tns:addMultiplePRs"/>
+<xs:element name="addMultiplePRsResponse" type="tns:addMultiplePRsResponse"/>
+<xs:element name="addPRByIP" type="tns:addPRByIP"/>
+<xs:element name="addPRByIPResponse" type="tns:addPRByIPResponse"/>
+<xs:element name="addPRByURL" type="tns:addPRByURL"/>
+<xs:element name="addPRByURLResponse" type="tns:addPRByURLResponse"/>
+<xs:element name="addSlaTemplate" type="tns:addSlaTemplate"/>
+<xs:element name="addSlaTemplateResponse" type="tns:addSlaTemplateResponse"/>
+<xs:element name="addTestbed" type="tns:addTestbed"/>
+<xs:element name="addTestbedResponse" type="tns:addTestbedResponse"/>
+<xs:element name="deleteDomain" type="tns:deleteDomain"/>
+<xs:element name="deleteDomainResponse" type="tns:deleteDomainResponse"/>
+<xs:element name="deleteLink" type="tns:deleteLink"/>
+<xs:element name="deleteLinkResponse" type="tns:deleteLinkResponse"/>
+<xs:element name="deletePR" type="tns:deletePR"/>
+<xs:element name="deletePRResponse" type="tns:deletePRResponse"/>
+<xs:complexType name="deleteLink">
+<xs:sequence>
+<xs:element minOccurs="0" name="user" type="xs:string"/>
+<xs:element minOccurs="0" name="password" type="xs:string"/>
+<xs:element minOccurs="0" name="idLink" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="deleteLinkResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="deletePR">
+<xs:sequence>
+<xs:element minOccurs="0" name="user" type="xs:string"/>
+<xs:element minOccurs="0" name="password" type="xs:string"/>
+<xs:element minOccurs="0" name="PRIdentifier" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="deletePRResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="addPRByURL">
+<xs:sequence>
+<xs:element minOccurs="0" name="user" type="xs:string"/>
+<xs:element minOccurs="0" name="password" type="xs:string"/>
+<xs:element minOccurs="0" name="PRDescription" type="xs:string"/>
+<xs:element minOccurs="0" name="managementURL" type="xs:string"/>
+<xs:element minOccurs="0" name="AuthToken" type="xs:string"/>
+<xs:element minOccurs="0" name="PRAdapterType" type="xs:string"/>
+<xs:element minOccurs="0" name="configurationFile" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="addPRByURLResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="addTestbed">
+<xs:sequence>
+<xs:element minOccurs="0" name="user" type="xs:string"/>
+<xs:element minOccurs="0" name="password" type="xs:string"/>
+<xs:element minOccurs="0" name="TestbedInformation" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="addTestbedResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="addSlaTemplate">
+<xs:sequence>
+<xs:element minOccurs="0" name="file" type="xs:string"/>
+<xs:element minOccurs="0" name="user" type="xs:string"/>
+<xs:element minOccurs="0" name="password" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="addSlaTemplateResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="addMultipleLinks">
+<xs:sequence>
+<xs:element minOccurs="0" name="user" type="xs:string"/>
+<xs:element minOccurs="0" name="password" type="xs:string"/>
+<xs:element minOccurs="0" name="LinksInformation" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="addMultipleLinksResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="addLink">
+<xs:sequence>
+<xs:element minOccurs="0" name="user" type="xs:string"/>
+<xs:element minOccurs="0" name="password" type="xs:string"/>
+<xs:element minOccurs="0" name="desc" type="xs:string"/>
+<xs:element minOccurs="0" name="sourceInterfaceId" type="xs:string"/>
+<xs:element minOccurs="0" name="sinkInterfaceId" type="xs:string"/>
+<xs:element minOccurs="0" name="additionalInformation" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="addLinkResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="addPRByIP">
+<xs:sequence>
+<xs:element minOccurs="0" name="user" type="xs:string"/>
+<xs:element minOccurs="0" name="password" type="xs:string"/>
+<xs:element minOccurs="0" name="prDescription" type="xs:string"/>
+<xs:element minOccurs="0" name="PRAdapterType" type="xs:string"/>
+<xs:element minOccurs="0" name="accessConfigurationFile" type="xs:string"/>
+<xs:element minOccurs="0" name="deviceConfigurationFile" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="addPRByIPResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="addInterdomainLink">
+<xs:sequence>
+<xs:element minOccurs="0" name="user" type="xs:string"/>
+<xs:element minOccurs="0" name="password" type="xs:string"/>
+<xs:element minOccurs="0" name="description" type="xs:string"/>
+<xs:element minOccurs="0" name="domain" type="xs:string"/>
+<xs:element minOccurs="0" name="interface" type="xs:string"/>
+<xs:element minOccurs="0" name="type" type="xs:string"/>
+<xs:element minOccurs="0" name="additionalInformation" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="addInterdomainLinkResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="addMultiplePRs">
+<xs:sequence>
+<xs:element minOccurs="0" name="user" type="xs:string"/>
+<xs:element minOccurs="0" name="password" type="xs:string"/>
+<xs:element minOccurs="0" name="PRsInformation" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="addMultiplePRsResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="addDomain">
+<xs:sequence>
+<xs:element minOccurs="0" name="user" type="xs:string"/>
+<xs:element minOccurs="0" name="password" type="xs:string"/>
+<xs:element minOccurs="0" name="domainName" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="addDomainResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="deleteDomain">
+<xs:sequence>
+<xs:element minOccurs="0" name="user" type="xs:string"/>
+<xs:element minOccurs="0" name="password" type="xs:string"/>
+<xs:element minOccurs="0" name="domainName" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="deleteDomainResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="addPRByURL">
+    <wsdl:part name="parameters" element="tns:addPRByURL">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deleteLinkResponse">
+    <wsdl:part name="parameters" element="tns:deleteLinkResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addDomainResponse">
+    <wsdl:part name="parameters" element="tns:addDomainResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addDomain">
+    <wsdl:part name="parameters" element="tns:addDomain">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addPRByIP">
+    <wsdl:part name="parameters" element="tns:addPRByIP">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deletePRResponse">
+    <wsdl:part name="parameters" element="tns:deletePRResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addPRByURLResponse">
+    <wsdl:part name="parameters" element="tns:addPRByURLResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addTestbedResponse">
+    <wsdl:part name="parameters" element="tns:addTestbedResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addLink">
+    <wsdl:part name="parameters" element="tns:addLink">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addLinkResponse">
+    <wsdl:part name="parameters" element="tns:addLinkResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deleteLink">
+    <wsdl:part name="parameters" element="tns:deleteLink">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addSlaTemplate">
+    <wsdl:part name="parameters" element="tns:addSlaTemplate">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addTestbed">
+    <wsdl:part name="parameters" element="tns:addTestbed">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addInterdomainLinkResponse">
+    <wsdl:part name="parameters" element="tns:addInterdomainLinkResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addSlaTemplateResponse">
+    <wsdl:part name="parameters" element="tns:addSlaTemplateResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deleteDomainResponse">
+    <wsdl:part name="parameters" element="tns:deleteDomainResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deleteDomain">
+    <wsdl:part name="parameters" element="tns:deleteDomain">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addPRByIPResponse">
+    <wsdl:part name="parameters" element="tns:addPRByIPResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addInterdomainLink">
+    <wsdl:part name="parameters" element="tns:addInterdomainLink">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deletePR">
+    <wsdl:part name="parameters" element="tns:deletePR">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addMultiplePRs">
+    <wsdl:part name="parameters" element="tns:addMultiplePRs">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addMultipleLinks">
+    <wsdl:part name="parameters" element="tns:addMultipleLinks">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addMultiplePRsResponse">
+    <wsdl:part name="parameters" element="tns:addMultiplePRsResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addMultipleLinksResponse">
+    <wsdl:part name="parameters" element="tns:addMultipleLinksResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="InfrastructureManagementSvc">
+    <wsdl:operation name="deleteLink">
+      <wsdl:input name="deleteLink" message="tns:deleteLink">
+    </wsdl:input>
+      <wsdl:output name="deleteLinkResponse" message="tns:deleteLinkResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deletePR">
+      <wsdl:input name="deletePR" message="tns:deletePR">
+    </wsdl:input>
+      <wsdl:output name="deletePRResponse" message="tns:deletePRResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addPRByURL">
+      <wsdl:input name="addPRByURL" message="tns:addPRByURL">
+    </wsdl:input>
+      <wsdl:output name="addPRByURLResponse" message="tns:addPRByURLResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addTestbed">
+      <wsdl:input name="addTestbed" message="tns:addTestbed">
+    </wsdl:input>
+      <wsdl:output name="addTestbedResponse" message="tns:addTestbedResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addSlaTemplate">
+      <wsdl:input name="addSlaTemplate" message="tns:addSlaTemplate">
+    </wsdl:input>
+      <wsdl:output name="addSlaTemplateResponse" message="tns:addSlaTemplateResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addMultipleLinks">
+      <wsdl:input name="addMultipleLinks" message="tns:addMultipleLinks">
+    </wsdl:input>
+      <wsdl:output name="addMultipleLinksResponse" message="tns:addMultipleLinksResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addLink">
+      <wsdl:input name="addLink" message="tns:addLink">
+    </wsdl:input>
+      <wsdl:output name="addLinkResponse" message="tns:addLinkResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addPRByIP">
+      <wsdl:input name="addPRByIP" message="tns:addPRByIP">
+    </wsdl:input>
+      <wsdl:output name="addPRByIPResponse" message="tns:addPRByIPResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addInterdomainLink">
+      <wsdl:input name="addInterdomainLink" message="tns:addInterdomainLink">
+    </wsdl:input>
+      <wsdl:output name="addInterdomainLinkResponse" message="tns:addInterdomainLinkResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addMultiplePRs">
+      <wsdl:input name="addMultiplePRs" message="tns:addMultiplePRs">
+    </wsdl:input>
+      <wsdl:output name="addMultiplePRsResponse" message="tns:addMultiplePRsResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addDomain">
+      <wsdl:input name="addDomain" message="tns:addDomain">
+    </wsdl:input>
+      <wsdl:output name="addDomainResponse" message="tns:addDomainResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteDomain">
+      <wsdl:input name="deleteDomain" message="tns:deleteDomain">
+    </wsdl:input>
+      <wsdl:output name="deleteDomainResponse" message="tns:deleteDomainResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="InfrastructureManagementSvcServiceSoapBinding" type="tns:InfrastructureManagementSvc">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="deleteLink">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="deleteLink">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="deleteLinkResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deletePR">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="deletePR">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="deletePRResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addPRByURL">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="addPRByURL">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addPRByURLResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addTestbed">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="addTestbed">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addTestbedResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addSlaTemplate">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="addSlaTemplate">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addSlaTemplateResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addMultipleLinks">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="addMultipleLinks">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addMultipleLinksResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addLink">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="addLink">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addLinkResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addPRByIP">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="addPRByIP">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addPRByIPResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addInterdomainLink">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="addInterdomainLink">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addInterdomainLinkResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addMultiplePRs">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="addMultiplePRs">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addMultiplePRsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addDomain">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="addDomain">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addDomainResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteDomain">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="deleteDomain">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="deleteDomainResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="InfrastructureManagementSvcService">
+    <wsdl:port name="InfrastructureManagementSvcPort" binding="tns:InfrastructureManagementSvcServiceSoapBinding">
+      <soap:address location="http://localhost:9090/InfrastructureManagementSvcPort"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
